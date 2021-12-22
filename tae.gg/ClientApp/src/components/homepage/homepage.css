@@ -1,0 +1,18 @@
+.welcome-cnt {
+  background-image: url(../../assets/pattern.png);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.stripe {
+  margin-top: -20px;
+}

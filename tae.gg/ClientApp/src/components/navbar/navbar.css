@@ -1,0 +1,30 @@
+.navbar {
+}
+
+.logo-cnt {
+  margin: 50px auto;
+  background-image: url(../../assets/logo.png);
+  max-width: 100px;
+  height: 80px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0 0px;
+}
+.links a {
+  transition-duration: 0.5s;
+  text-decoration: none;
+  padding: 10px 30px;
+  margin: 5px 0;
+  border-right: var(--tae_yellow) solid 5px;
+}
+
+.links a:hover {
+  border-right: var(--tae_yellow) solid 30px;
+}
