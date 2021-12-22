@@ -12,19 +12,30 @@
 
 .links {
   display: flex;
+  color: white;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-end;
-  padding: 0 0px;
+  align-items: center;
+  padding: 1vw;
+
 }
 .links a {
-  transition-duration: 0.5s;
+  font-size: 1.3rem;
+  transition-duration: 1s;
+  color: grey;
   text-decoration: none;
-  padding: 10px 30px;
-  margin: 5px 0;
   border-right: var(--tae_yellow) solid 5px;
+  border-bottom: var(--tae_foreground_primary) solid 3px;
+  border-color:rgba(0, 0, 0, 0);
+  margin: 3vh 0 3vh 0;
+  width: 50%;
+  text-align: center;
+  padding: 1vh;
 }
 
 .links a:hover {
-  border-right: var(--tae_yellow) solid 30px;
+  border-color: var(--tae_foreground_primary);
+  filter: blur(.5px); 
+  color: white;
+  
 }

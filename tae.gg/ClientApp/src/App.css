@@ -10,13 +10,13 @@
 }
 
 .content {
-  width: 85%;
+  width: 88%;
 }
 
 .nav {
   top: 0;
   position: sticky;
-  width: 15%;
+  width: 12%;
   height: 100vh;
   background-color: rgb(20, 20, 20);
 }
