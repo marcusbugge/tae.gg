@@ -3,6 +3,11 @@
   margin: 0;
 }
 
+body {
+  overflow-x: hidden; /* Hide scrollbars */
+  scroll-behavior: smooth;
+}
+
 /* NAVIGATION */
 
 .application {
