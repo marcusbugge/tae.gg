@@ -1,6 +1,15 @@
 .navbar {
 }
 
+.nav{
+  transition-duration: .3s;
+  background-color: rgb(20, 20, 20);
+}
+
+.nav:hover{
+  background-color: var(--tae_background_primary);
+}
+
 .logo-cnt {
   margin: 50px auto;
   background-image: url(../../assets/logo.png);
