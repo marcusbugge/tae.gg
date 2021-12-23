@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import HomeContent from "./HomeContent";
 import "./homepage.css";
 export class Home extends Component {
   render() {
@@ -10,12 +11,8 @@ export class Home extends Component {
             <div className="stripe"></div>
           </div>
         </div>
-        <p>HAHAHAHAHAHAH</p>
-        <p>HAHAHAHAHAHAH</p>
-        <p>HAHAHAHAHAHAH</p>
-        <p>HAHAHAHAHAHAH</p>
-        <p>HAHAHAHAHAHAH</p>
-        <p>HAHAHAHAHAHAH</p>
+
+        <HomeContent />
       </div>
     );
   }
