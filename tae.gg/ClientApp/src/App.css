@@ -23,5 +23,5 @@ body {
   position: sticky;
   width: 12%;
   height: 100vh;
-  background-color: rgb(20, 20, 20);
+  /*background-color: rgb(20, 20, 20); Satt i navbar.css*/
 }

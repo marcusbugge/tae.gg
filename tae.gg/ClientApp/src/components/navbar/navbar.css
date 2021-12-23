@@ -1,6 +1,15 @@
 .navbar {
 }
 
+.nav{
+  transition-duration: .3s;
+  background-color: rgb(20, 20, 20);
+}
+
+.nav:hover{
+  background-color: var(--tae_background_primary);
+}
+
 .logo-cnt {
   margin: 50px auto;
   background-image: url(../../assets/logo.png);
@@ -21,12 +30,9 @@
 }
 .links a {
   font-size: 1.3rem;
-  transition-duration: 1s;
+  transition-duration: .2s;
   color: grey;
   text-decoration: none;
-  border-right: var(--tae_yellow) solid 5px;
-  border-bottom: var(--tae_foreground_primary) solid 3px;
-  border-color:rgba(0, 0, 0, 0);
   margin: 3vh 0 3vh 0;
   width: 50%;
   text-align: center;
@@ -35,7 +41,8 @@
 
 .links a:hover {
   border-color: var(--tae_foreground_primary);
-  filter: blur(.5px); 
-  color: white;
+  color: var(--tae_foreground_primary);
+  letter-spacing: .5px;
+  font-weight: 200;
   
 }

@@ -19,28 +19,28 @@ export class Navbar extends Component {
 
     return (
       <div className="navbar">
-        <div className="logo-cnt"></div>
+        <Link to="/"><div className="logo-cnt"></div></Link>
 
         <div className="links">
           <Link to="/test"
             onMouseEnter={() => setHoveringLink(true)}
             onMouseExit={() => setHoveringLink(false)}>
-            Teams
+            About
           </Link>
           <Link to="/"
             onMouseEnter={() => setHoveringLink(true)}
             onMouseExit={() => setHoveringLink(false)}>
-            About
+            Players
           </Link>
           <Link to="/test"
             onMouseEnter={() => setHoveringLink(true)}
             onMouseExit={() => setHoveringLink(false)}>
-            Corner of Jan
+            Contact
           </Link>
           <Link to="/"
             onMouseEnter={() => setHoveringLink(true)}
             onMouseExit={() => setHoveringLink(false)}>
-            Ttobusa
+            Test
           </Link>
         </div>
       </div>
