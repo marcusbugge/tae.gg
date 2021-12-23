@@ -38,6 +38,10 @@ a {
   color: rgb(190, 190, 190);
 }
 
+a:hover {
+  color: var(--tae_yellow);
+}
+
 .stripe {
   height: 40px;
   width: 30rem;

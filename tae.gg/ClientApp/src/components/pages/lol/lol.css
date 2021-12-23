@@ -1,0 +1,21 @@
+/* CONTENT */
+
+.content-lol {
+  background-color: rgb(161, 78, 78);
+}
+
+.leaguebanner {
+  background-image: url("../../../assets/leaguestadium.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 70vh;
+  margin-bottom: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.leaguebanner h1 {
+  font-size: 7em;
+}
