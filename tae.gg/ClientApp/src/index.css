@@ -47,3 +47,7 @@ a:hover {
   width: 30rem;
   background-color: var(--tae_foreground_primary);
 }
+
+.stripe-mini {
+  background-color: var(--tae_foreground_primary);
+}

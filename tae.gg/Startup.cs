@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
@@ -35,7 +36,7 @@ namespace taegg
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-         
+
 
             app.UseRouting();
 
@@ -54,6 +55,7 @@ namespace taegg
                 {
                     spa.UseReactDevelopmentServer(npmScript: "start");
                 }
+
             });
         }
     }

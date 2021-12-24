@@ -30,7 +30,7 @@ export class Footer extends Component {
           </div>
         </div>
 
-        <div className="soscial-cnt">hahah</div>
+        <div className="soscial-cnt"></div>
       </div>
     );
   }

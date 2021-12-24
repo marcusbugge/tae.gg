@@ -27,11 +27,11 @@
   padding: 1vw;
 }
 .links a {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   transition-duration: 0.2s;
-  color: white;
+  color: grey;
   text-decoration: none;
-  margin: 3vh 0 3vh 0;
+  margin: 1.5vh 0 1.5vh 0;
   width: 50%;
   text-align: center;
   padding: 1vh;
@@ -42,4 +42,5 @@
   color: var(--tae_foreground_primary);
   letter-spacing: 0.5px;
   font-weight: 200;
+  margin: 1.5vh 0 1.5vh 0;
 }
