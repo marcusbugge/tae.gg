@@ -27,9 +27,10 @@
   padding: 1vw;
 }
 .links a {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   transition-duration: 0.2s;
-  color: grey;
+  color: white;
+
   text-decoration: none;
   margin: 1.5vh 0 1.5vh 0;
   width: 50%;
@@ -43,4 +44,5 @@
   letter-spacing: 0.5px;
   font-weight: 200;
   margin: 1.5vh 0 1.5vh 0;
+
 }
