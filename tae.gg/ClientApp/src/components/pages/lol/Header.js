@@ -8,6 +8,7 @@ export class Header extends Component {
       <div>
         <div className="leaguebanner">
           <h1>LEAGUE OF LEGENDS</h1>
+          <h1 className="stroke">LEAGUE OF LEGENDS</h1>
         </div>
       </div>
     );
