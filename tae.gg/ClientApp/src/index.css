@@ -38,12 +38,18 @@ a {
 
 a:hover {
   color: var(--tae_foreground_primary);
+
   transition-duration: 0.1s;
   font-weight: 900;
+
 }
 
 .stripe {
   height: 40px;
   width: 30rem;
+  background-color: var(--tae_foreground_primary);
+}
+
+.stripe-mini {
   background-color: var(--tae_foreground_primary);
 }

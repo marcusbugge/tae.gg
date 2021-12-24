@@ -17,7 +17,7 @@ namespace taegg.DB
             context.Database.EnsureDeleted();
             context.Database.EnsureCreated();
 
-            /*
+           
             var player = new Player()
             {
                 Gamertag = "Bugge",
@@ -26,20 +26,36 @@ namespace taegg.DB
             };
             var player2 = new Player()
             {
-                Gamertag = "Bugge",
+                Gamertag = "Feppe",
                 Game = "lol",
-                Role = "Midlane"
+                Role = "Jungle"
             };
-            
+            var player3 = new Player()
+            {
+                Gamertag = "Jago848",
+                Game = "lol",
+                Role = "Toplane"
+            };
+            var player4 = new Player()
+            {
+                Gamertag = "MegaCast",
+                Game = "lol",
+                Role = "ADC"
+            };
+            var player5 = new Player()
+            {
+                Gamertag = "Jan",
+                Game = "lol",
+                Role = "Support"
+            };
+         
+
             context.players.Add(player);
             context.players.Add(player2);
-            */
-
-            context.players.Add(new Player(){
-                Gamertag = "Bugge",
-                Game = "lol",
-                Role = "midlane" });
-
+            context.players.Add(player3);
+            context.players.Add(player4);
+            context.players.Add(player5);
+         
             context.SaveChanges();
         }
     }
