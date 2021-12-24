@@ -1,12 +1,12 @@
 .navbar {
 }
 
-.nav{
-  transition-duration: .3s;
+.nav {
+  transition-duration: 0.3s;
   background-color: rgb(20, 20, 20);
 }
 
-.nav:hover{
+.nav:hover {
   background-color: var(--tae_background_primary);
 }
 
@@ -21,17 +21,15 @@
 
 .links {
   display: flex;
-  color: white;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 1vw;
-
 }
 .links a {
   font-size: 1.3rem;
-  transition-duration: .2s;
-  color: grey;
+  transition-duration: 0.2s;
+  color: white;
   text-decoration: none;
   margin: 3vh 0 3vh 0;
   width: 50%;
@@ -42,7 +40,6 @@
 .links a:hover {
   border-color: var(--tae_foreground_primary);
   color: var(--tae_foreground_primary);
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
   font-weight: 200;
-  
 }

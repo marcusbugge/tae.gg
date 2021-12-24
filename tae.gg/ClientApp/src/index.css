@@ -7,13 +7,11 @@
 
   /* COLORS */
   --tae_background_primary: rgb(20, 20, 20);
-  --tae_background_accent: #202020; 
-  --tae_foreground_primary: #ffb400; 
+  --tae_background_accent: #202020;
+  --tae_foreground_primary: #ffb400;
   --tae_foreground_primary_accent: #ffe3a0; /*   TODO Logo colors*/
-  --tae_foreground_secondary: #AF6708;
+  --tae_foreground_secondary: #af6708;
   --tae_foreground_secondary_accent: #dc963c;
-
-
 }
 
 h1 {
@@ -39,7 +37,9 @@ a {
 }
 
 a:hover {
-  color: var(--tae_yellow);
+  color: var(--tae_foreground_primary);
+  transition-duration: 0.1s;
+  font-weight: 900;
 }
 
 .stripe {

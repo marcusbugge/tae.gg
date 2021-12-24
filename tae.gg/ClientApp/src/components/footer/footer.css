@@ -21,7 +21,7 @@
 }
 
 .stripe-mini {
-  background-color: var(--tae_yellow);
+  background-color: var(--tae_foreground_primary);
   height: 7px;
   width: 170px;
 }
