@@ -25,7 +25,7 @@ export class Footer extends Component {
             <div className="games">
               <Link to="/games/valorant">Valorant</Link>
               <Link to="/games/leagueoflegends">League of Legends</Link>
-              <Link to="/games/csgo">Counter Strike: Global Offensive</Link>
+              <Link to="/games/csgo">Animal Crossing</Link>
             </div>
           </div>
         </div>
