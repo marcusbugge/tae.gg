@@ -7,6 +7,9 @@ namespace taegg.DAL
 {
     public interface IPlayerRepository
     {
-        Task<Player> GetPlayers();
+        Task<Player> GetPlayer(int id);
+        Task<List<Player>> GetAllPlayers();
+        Task<bool> Delete(int id);
+        Task<bool> Change(Player newPlayer);
     }
 }
