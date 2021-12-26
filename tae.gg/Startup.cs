@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
@@ -20,7 +21,7 @@ namespace taegg
         {
             services.AddControllers();
             services.AddDbContext<PlayerContext>(options =>
-                            options.UseSqlite("Data Source=Kunde.db"));
+                            options.UseSqlite("Data Source=lolPlayers.db"));
             services.AddScoped<IPlayerRepository, PlayerRepository>();
         }
 
@@ -35,7 +36,7 @@ namespace taegg
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-         
+
 
             app.UseRouting();
 
@@ -54,6 +55,7 @@ namespace taegg
                 {
                     spa.UseReactDevelopmentServer(npmScript: "start");
                 }
+
             });
         }
     }

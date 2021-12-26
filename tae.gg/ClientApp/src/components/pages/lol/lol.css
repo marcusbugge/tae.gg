@@ -1,15 +1,15 @@
 /* CONTENT */
 
 .content-lol {
-  background-color: rgb(161, 78, 78);
+  background-color: rgb(0, 0, 0);
+  background-image: radial-gradient(#d3d3d3 2px, transparent 1px);
 }
 
 .leaguebanner {
   background-image: url("../../../assets/leaguestadium.png");
   background-size: cover;
   background-repeat: no-repeat;
-  height: 70vh;
-  margin-bottom: 800px;
+  height: 75vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,3 +19,69 @@
 .leaguebanner h1 {
   font-size: 7em;
 }
+
+/* START OF COUNTDOWN */
+
+/* END OF COUNTDOWN */
+
+/* PLAYER PRESENTATION */
+
+.stroke {
+  position: absolute;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  -webkit-text-stroke: var(--tae_foreground_primary) 1px;
+  color: transparent;
+}
+
+.cardnew {
+  position: absolute;
+  display: flex;
+}
+
+.data {
+  padding: 100px 0px;
+}
+
+.cards-cnt {
+}
+
+.card {
+  display: flex;
+  margin: 50px;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap-reverse;
+}
+
+.card img {
+  width: 150px;
+  background-color: rgb(37, 37, 37);
+}
+
+.playertext {
+  margin-left: 20px;
+}
+
+.playertext div {
+  margin: 20px 0px;
+}
+
+.playertext div h1 {
+  margin-bottom: 5px;
+}
+
+.playertext p {
+  color: rgb(138, 138, 138);
+}
+
+.playertext h1 {
+  color: var(--tae_foreground_primary);
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+/* END OF PLAYERPRESENTATION */
