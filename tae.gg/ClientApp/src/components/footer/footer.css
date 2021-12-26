@@ -4,7 +4,7 @@
 }
 
 .footer-cnt {
-  background-color: rgb(20, 20, 20);
+  background-color: var(--tae_background_primary);
   height: 400px;
   padding: 50px 300px;
 }
@@ -21,7 +21,7 @@
 }
 
 .stripe-mini {
-  background-color: var(--tae_yellow);
+  background-color: var(--tae_foreground_primary);
   height: 7px;
   width: 170px;
 }

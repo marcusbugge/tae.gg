@@ -39,7 +39,7 @@ a {
 }
 
 a:hover {
-  color: var(--tae_yellow);
+  color: var(--tae_foreground_primary);
 }
 
 .stripe {
