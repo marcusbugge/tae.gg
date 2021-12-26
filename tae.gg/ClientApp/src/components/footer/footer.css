@@ -4,7 +4,7 @@
 }
 
 .footer-cnt {
-  background-color: rgb(20, 20, 20);
+  background-color: var(--tae_background_primary);
   height: 400px;
   padding: 50px 300px;
 }

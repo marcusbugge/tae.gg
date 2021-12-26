@@ -54,5 +54,5 @@
 .stripe-thin {
   width: 100%;
   height: 2px;
-  background-color: var(--tae_yellow);
+  background-color: var(--tae_foreground_primary);
 }
