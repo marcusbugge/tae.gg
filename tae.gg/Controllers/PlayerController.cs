@@ -7,7 +7,7 @@ using taegg.Models;
 
 namespace taegg.Controllers
 {
-    [Route("/api/orders/")]
+    [Route("api/[controller]/[action]")]
     public class PlayerController : ControllerBase
     {
 
@@ -18,10 +18,24 @@ namespace taegg.Controllers
             _db = db;
         }
 
-        public async Task<ActionResult> GetOrders()
+        public async Task<Player> GetOne(int id)
         {
-            Player orders = await _db.GetPlayers();
-            return Ok(orders);
+            return await _db.GetPlayer(id);
+        }
+
+        public async Task<List<Player>> GetAll()
+        {
+            return await _db.GetAllPlayers();
+        }
+
+        public async Task<bool> Delete(int id)
+        {
+            return await _db.Delete(id);
+        }
+
+        public async Task<bool> Change(Player newPlayer)
+        {
+            return await _db.Change(newPlayer);
         }
     }
 }

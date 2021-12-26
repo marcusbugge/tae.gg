@@ -21,7 +21,7 @@ namespace taegg
         {
             services.AddControllers();
             services.AddDbContext<PlayerContext>(options =>
-                            options.UseSqlite("Data Source=Kunde.db"));
+                            options.UseSqlite("Data Source=lolPlayers.db"));
             services.AddScoped<IPlayerRepository, PlayerRepository>();
         }
 

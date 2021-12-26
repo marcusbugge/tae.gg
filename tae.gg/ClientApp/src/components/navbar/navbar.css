@@ -28,7 +28,6 @@
 }
 .links a {
   font-size: 1.3rem;
-  transition-duration: 0.2s;
   color: white;
 
   text-decoration: none;
@@ -39,10 +38,20 @@
 }
 
 .links a:hover {
-  border-color: var(--tae_foreground_primary);
-  color: var(--tae_foreground_primary);
+  filter: invert(61%) sepia(93%) saturate(578%) hue-rotate(359deg)
+    brightness(121%) contrast(80%);
   letter-spacing: 0.5px;
   font-weight: 200;
   margin: 1.5vh 0 1.5vh 0;
+}
 
+.atag:hover {
+  filter: invert(61%) sepia(93%) saturate(578%) hue-rotate(359deg)
+    brightness(121%) contrast(80%);
+}
+
+/* NAV EXTEND GAMES */
+
+.extranav h1 {
+  position: absolute;
 }

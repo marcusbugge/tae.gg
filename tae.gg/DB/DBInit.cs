@@ -48,7 +48,38 @@ namespace taegg.DB
                 Game = "lol",
                 Role = "Support"
             };
-         
+
+
+            var player6 = new Player()
+            {
+                Gamertag = "Fatdrian",
+                Game = "valorant",
+                Role = "Role"
+            };
+            var player7 = new Player()
+            {
+                Gamertag = "Canute",
+                Game = "valorant",
+                Role = "Role"
+            };
+            var player8 = new Player()
+            {
+                Gamertag = "Sondre?",
+                Game = "valorant",
+                Role = "Role"
+            };
+            var player9 = new Player()
+            {
+                Gamertag = "Player?",
+                Game = "valorant",
+                Role = "Role"
+            };
+            var player10 = new Player()
+            {
+                Gamertag = "Player?",
+                Game = "valorant",
+                Role = "Role"
+            };
 
             context.players.Add(player);
             context.players.Add(player2);
