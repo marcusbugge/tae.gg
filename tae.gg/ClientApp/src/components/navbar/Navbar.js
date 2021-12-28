@@ -28,32 +28,16 @@ export class Navbar extends Component {
         </Link>
 
         <div className="links">
-          <Link
-            to="/about"
-            onMouseEnter={() => setHoveringLink(true)}
-            onMouseExit={() => setHoveringLink(false)}
-          >
+          <Link to="/about" onMouseEnter={() => setHoveringLink(true)}>
             About
           </Link>
-          <Link
-            to="/games"
-            onMouseEnter={() => setHoveringLink(true)}
-            onMouseExit={() => setHoveringLink(false)}
-          >
+          <Link to="/games" onMouseEnter={() => setHoveringLink(true)}>
             Games
           </Link>
-          <Link
-            to="/news"
-            onMouseEnter={() => setHoveringLink(true)}
-            onMouseExit={() => setHoveringLink(false)}
-          >
+          <Link to="/news" onMouseEnter={() => setHoveringLink(true)}>
             News
           </Link>
-          <Link
-            to="/merch"
-            onMouseEnter={() => setHoveringLink(true)}
-            onMouseExit={() => setHoveringLink(false)}
-          >
+          <Link to="/merch" onMouseEnter={() => setHoveringLink(true)}>
             Merch
           </Link>
         </div>

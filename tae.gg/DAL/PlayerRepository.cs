@@ -9,9 +9,9 @@ namespace taegg.DAL
 {
     public class PlayerRepository : IPlayerRepository
     {
-        private readonly PlayerContext _db;
+        private readonly Context _db;
 
-        public PlayerRepository(PlayerContext db)
+        public PlayerRepository(Context db)
         {
             _db = db;
         }

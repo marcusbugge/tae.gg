@@ -1,7 +1,9 @@
 ﻿using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
+using tae.gg.DAL;
 using taegg.Models;
+using static taegg.DB.Context;
 
 namespace taegg.DB
 {
@@ -11,11 +13,11 @@ namespace taegg.DB
         {
 
             var serviceScope = app.ApplicationServices.CreateScope();
-            var context = serviceScope.ServiceProvider.GetService<PlayerContext>();
+            var db = serviceScope.ServiceProvider.GetService<Context>();
 
 
-            context.Database.EnsureDeleted();
-            context.Database.EnsureCreated();
+            db.Database.EnsureDeleted();
+            db.Database.EnsureCreated();
 
            
             var player = new Player()
@@ -49,8 +51,7 @@ namespace taegg.DB
                 Role = "Support"
             };
 
-
-            var player6 = new Player()
+            /* var player6 = new Player()
             {
                 Gamertag = "Fatdrian",
                 Game = "valorant",
@@ -80,14 +81,24 @@ namespace taegg.DB
                 Game = "valorant",
                 Role = "Role"
             };
+            */
 
-            context.players.Add(player);
-            context.players.Add(player2);
-            context.players.Add(player3);
-            context.players.Add(player4);
-            context.players.Add(player5);
-         
-            context.SaveChanges();
+            db.players.Add(player);
+            db.players.Add(player2);
+            db.players.Add(player3);
+            db.players.Add(player4);
+            db.players.Add(player5);
+
+            var user = new Users();
+            user.Username = "Admin";
+            string passord = "Test11";
+            byte[] salt = UserRepository.LagSalt();
+            byte[] hash = UserRepository.LagHash(passord, salt);
+            user.Password = hash;
+            user.Salt = salt;
+            db.users.Add(user);
+
+            db.SaveChanges();
         }
     }
 }

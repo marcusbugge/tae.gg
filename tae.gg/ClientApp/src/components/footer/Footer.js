@@ -17,7 +17,7 @@ export class Footer extends Component {
 
             <div className="games">
               <Link to="/games/valorant">News</Link>
-              <Link to="/games/leagueoflegends">About us</Link>
+              <Link to="/aboutus">About us</Link>
               <Link to="/games/csgo">Staff</Link>
             </div>
           </div>
