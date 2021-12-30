@@ -1,32 +1,20 @@
-import { React, useEffect, useState } from "react";
+import { Component, React, useEffect, useState } from "react";
 import axios from "axios";
 import user from "../../models/User";
+import LoginForm from "../login/LoginForm";
+import "./login.css";
 
-export default function Login() {
-  const baseURL = "https://localhost:5001/api/user/logginn";
-
-  useEffect(() => {
-    const postTodo = () => {
-      const user = {
-        Username: "Admin",
-        Password: "Test11",
-      };
-      const headers = { "header-name": "value" };
-      const config = { headers };
-      axios
-        .post(baseURL, user, config)
-        .then((response) => {
-          console.log(response.status);
-          console.log(response.data);
-        })
-        .catch((e) => console.log("something went wrong :(", e));
-    };
-    postTodo();
-  }, []);
-
-  return (
-    <div>
-      <h1>ja yeeet</h1>
-    </div>
-  );
+// Define the Login form component
+class Login extends Component {
+  render() {
+    return (
+      <div className="login-cnt">
+        <div className="form-holder">
+          <LoginForm />
+        </div>
+      </div>
+    );
+  }
 }
+
+export default Login;
