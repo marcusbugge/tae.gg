@@ -7,5 +7,8 @@ namespace tae.gg.DAL
     public interface IUserRepository
     {
         Task<bool> Login(User user);
+        //Task<bool> Logout();
+        //Task<bool> UserStatus();
+        
     }
 }

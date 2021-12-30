@@ -19,7 +19,7 @@ namespace tae.gg.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> LoggInn([FromBody] User user)
+        public async Task<ActionResult> Login([FromBody] User user)
         {
 
             Console.WriteLine("user:" + user.Username);
@@ -30,12 +30,31 @@ namespace tae.gg.Controllers
                 {
 
                     HttpContext.Session.SetString(_loggedIn, "");
-                    return Ok("hhahaha");
+                    return Ok(false);
                 }
                 HttpContext.Session.SetString(_loggedIn, "LoggedIn");
                 return Ok(true);
             }
             return BadRequest("Feil i inputvalidering på server");
+        }
+
+        public void Logout()
+        {
+            HttpContext.Session.SetString(_loggedIn, "");
+        }
+
+        [HttpGet]
+        public bool UserStatus()
+        {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString(_loggedIn)))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+
+            }
         }
     }
 }

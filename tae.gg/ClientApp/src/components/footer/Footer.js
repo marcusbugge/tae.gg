@@ -5,6 +5,7 @@ import discord from "../../assets/discord.png";
 import twitter from "../../assets/twitter.png";
 import twitch from "../../assets/twitch.png";
 import { Link } from "react-router-dom";
+import isOnline from "../../App";
 
 export class Footer extends Component {
   render() {
@@ -19,6 +20,11 @@ export class Footer extends Component {
               <Link to="/games/valorant">News</Link>
               <Link to="/aboutus">About us</Link>
               <Link to="/games/csgo">Staff</Link>
+              {isOnline ? (
+                <Link to="/">Logout</Link>
+              ) : (
+                <Link to="/login">Login</Link>
+              )}
             </div>
           </div>
           <div className="games-cnt">
@@ -27,7 +33,7 @@ export class Footer extends Component {
 
             <div className="games">
               <Link to="/games/valorant">Valorant</Link>
-              <Link to="/games/leagueoflegends">League of Legends</Link>
+              <Link to="/games/league-of-legends">League of Legends</Link>
               <Link to="/games/csgo">Animal Crossing</Link>
             </div>
           </div>
