@@ -66,7 +66,50 @@
   cursor: pointer;
 }
 
-.edit-btn:hover {
+.edit-btn:hover,
+.save-btn:hover {
   background-color: var(--tae_foreground_primary);
   color: black;
+}
+
+/* ANIMATIONS */
+
+@keyframes rollout {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100px;
+  }
+}
+
+.playerinfo-extend {
+  background-color: rgb(29, 29, 29);
+  animation: rollout 0.4s;
+  animation-fill-mode: forwards;
+  margin: -20px 0 0 0;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.inputextend {
+  background-color: rgb(49, 49, 49);
+  border-style: none;
+  height: 35px;
+  color: white;
+  padding: 0 0 0 10px;
+  margin-right: 10px;
+}
+
+.save-btn {
+  color: white;
+  background-color: rgb(49, 49, 49);
+  font-family: var(--antonfont);
+  border-style: none;
+  font-size: 15px;
+  width: 60px;
+  height: 35px;
+  cursor: pointer;
+  margin-left: 110px;
 }

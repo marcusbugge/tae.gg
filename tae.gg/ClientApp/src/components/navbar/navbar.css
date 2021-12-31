@@ -43,6 +43,7 @@
   height: 85vh;
 }
 .nav-footer {
+  cursor: pointer;
   height: 15vh;
   background-color: var(--tae_foreground_primary);
   display: flex;
@@ -50,9 +51,23 @@
   padding-top: 20px;
 }
 
+.nav-footer:hover {
+}
+
+.nav-footer:hover .merch h1 {
+  margin-left: 20px;
+  transition: 0.1s;
+  color: black;
+}
+
+a h1 {
+  text-decoration: none;
+}
+
 /* NAV EXTEND GAMES */
 
 .extranav {
+  transition: 0.5s;
   background-color: var(--tae_background_primary);
 }
 
@@ -66,6 +81,9 @@
 }
 
 .extranav {
+  justify-content: center;
+  display: flex;
+  align-items: center;
   animation: rollout 0.4s ease-out;
   animation-fill-mode: forwards;
 }
