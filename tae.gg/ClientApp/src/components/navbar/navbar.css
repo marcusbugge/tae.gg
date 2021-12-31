@@ -2,7 +2,6 @@
 }
 
 .nav {
-  transition-duration: 0.3s;
   background-color: rgb(20, 20, 20);
 }
 
@@ -22,36 +21,51 @@
 .links {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 1vw;
 }
 .links a {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   color: white;
-
   text-decoration: none;
-  margin: 1.5vh 0 1.5vh 0;
-  width: 50%;
-  text-align: center;
+  margin: 1.5vh 40px;
   padding: 1vh;
 }
 
 .links a:hover {
-  filter: invert(61%) sepia(93%) saturate(578%) hue-rotate(359deg)
-    brightness(121%) contrast(80%);
+  color: var(--tae_foreground_primary);
   letter-spacing: 0.5px;
   font-weight: 200;
-  margin: 1.5vh 0 1.5vh 0;
+  margin-left: 50px;
 }
 
-.atag:hover {
-  filter: invert(61%) sepia(93%) saturate(578%) hue-rotate(359deg)
-    brightness(121%) contrast(80%);
+/* FOOTER NAV */
+
+.nav-content {
+  height: 85vh;
+}
+.nav-footer {
+  height: 15vh;
+  background-color: var(--tae_foreground_primary);
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
 }
 
 /* NAV EXTEND GAMES */
 
-.extranav h1 {
-  position: absolute;
+.extranav {
+  background-color: var(--tae_background_primary);
+}
+
+@keyframes rollout {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100px;
+  }
+}
+
+.extranav {
+  animation: rollout 0.4s ease-out;
+  animation-fill-mode: forwards;
 }

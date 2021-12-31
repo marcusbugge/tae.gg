@@ -42,6 +42,44 @@ namespace taegg.DAL
             }
         }
 
+        public async Task<List<Player>> GetPlayersByGame(string game)
+        {
+
+            Console.WriteLine(game);
+            try
+            {
+                List<Player> allPlayers = await _db.players.Select(p => new Player
+                {
+                    Id = p.Id,
+                    Gamertag = p.Gamertag,
+                    Game = p.Game,
+                    Role = p.Role
+                }).ToListAsync();
+
+                List<Player> allPlayersByGame = new List<Player>();
+
+                allPlayers.ForEach(Console.WriteLine);
+
+                foreach (Player p in allPlayers)
+                {
+                    if (p.Game.Equals(game))
+                    {
+                        allPlayersByGame.Add(p);
+                    }
+                }
+
+                allPlayersByGame.ForEach(Console.WriteLine);
+
+                return allPlayersByGame;
+            }
+            catch
+            {
+                return null;
+            }
+
+            return null;
+        }
+
         // Change a player with POST
         public async Task<bool> Change(Player newPlayer)
         {

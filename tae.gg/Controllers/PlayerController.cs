@@ -28,6 +28,12 @@ namespace taegg.Controllers
             return await _db.GetAllPlayers();
         }
 
+       
+        public async Task<List<Player>> GetPlayersByGame(string game)
+        {
+            return await _db.GetPlayersByGame(game);
+        }
+
         public async Task<bool> Delete(int id)
         {
             return await _db.Delete(id);
@@ -37,5 +43,7 @@ namespace taegg.Controllers
         {
             return await _db.Change(newPlayer);
         }
+
+        
     }
 }

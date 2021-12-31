@@ -10,7 +10,7 @@ export default function League() {
     getAllPlayers();
 
     async function getAllPlayers() {
-      const response = await fetch("https://localhost:5001/api/player/getall");
+      const response = await fetch("/api/player/getplayersbygame?game=lol");
       const data = await response.json();
 
       console.log(data);
