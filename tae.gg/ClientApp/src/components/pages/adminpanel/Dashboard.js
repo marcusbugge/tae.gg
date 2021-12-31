@@ -1,6 +1,7 @@
 import React from "react";
 import "./admin.css";
 import { useEffect, useState } from "react";
+import Edit from "./Edit";
 
 export default function Dashboard() {
   const [players, setPlayers] = useState([]);
@@ -31,10 +32,14 @@ export default function Dashboard() {
     }
   }, []);
 
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(-1);
 
-  const extendCards = (e) => {
-    setShow(true);
+  const extendCards = (index) => {
+    setShow(index);
+  };
+
+  const hideCards = () => {
+    setShow(-1);
   };
 
   return (
@@ -54,12 +59,15 @@ export default function Dashboard() {
                     <p className="player">{player.gamertag}</p>
                   </div>
                   <div className="player-edit-btn">
-                    <button onClick={extendCards} className="edit-btn">
+                    <button
+                      onClick={() => extendCards(index)}
+                      className="edit-btn"
+                    >
                       EDIT
                     </button>
                   </div>
                 </div>
-                {show && <div className="playerinfo-extend">testetstest</div>}
+                {show === index ? <Edit player={player} /> : ""}
               </div>
             ))}
           </div>

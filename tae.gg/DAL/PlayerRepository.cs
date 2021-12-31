@@ -83,10 +83,13 @@ namespace taegg.DAL
         // Change a player with POST
         public async Task<bool> Change(Player newPlayer)
         {
+            Console.WriteLine("in " + newPlayer.Id + newPlayer.Gamertag);
             try
             {
                 var playerToChange = await _db.players.FindAsync(newPlayer.Id);
-                
+
+                Console.WriteLine("to change " + newPlayer.Id + newPlayer.Gamertag);
+
                 playerToChange.Gamertag = newPlayer.Gamertag;
                 playerToChange.Game = newPlayer.Game;
                 playerToChange.Role = newPlayer.Role;

@@ -14,7 +14,13 @@ export default function Navbar() {
   };
 
   const Extranav = () => {
-    return <div className="extranav"></div>;
+    return (
+      <div className="extranav">
+        <div className="extranav-games">
+          <li></li>
+        </div>
+      </div>
+    );
   };
 
   return (
@@ -46,7 +52,9 @@ export default function Navbar() {
         </div>
       </div>
       <div className="nav-footer">
-        <h1>TAE MERCH</h1>
+        <div className="merch">
+          <h1>TAE MERCH</h1>
+        </div>
       </div>
     </div>
   );
