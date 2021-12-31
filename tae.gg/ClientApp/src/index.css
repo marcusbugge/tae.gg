@@ -44,8 +44,6 @@ a {
 
 a:hover {
   color: var(--tae_foreground_primary);
-  filter: invert(61%) sepia(93%) saturate(578%) hue-rotate(359deg)
-    brightness(121%) contrast(80%);
   font-weight: 900;
 }
 

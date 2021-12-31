@@ -51,7 +51,7 @@ namespace taegg.DB
                 Role = "Support"
             };
 
-            /* var player6 = new Player()
+             var player6 = new Player()
             {
                 Gamertag = "Fatdrian",
                 Game = "valorant",
@@ -81,13 +81,18 @@ namespace taegg.DB
                 Game = "valorant",
                 Role = "Role"
             };
-            */
-
+            
             db.players.Add(player);
             db.players.Add(player2);
             db.players.Add(player3);
             db.players.Add(player4);
             db.players.Add(player5);
+
+            db.players.Add(player6);
+            db.players.Add(player7);
+            db.players.Add(player8);
+            db.players.Add(player9);
+            db.players.Add(player10);
 
             var user = new Users();
             user.Username = "Admin";

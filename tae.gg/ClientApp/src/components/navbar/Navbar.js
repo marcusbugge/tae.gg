@@ -1,49 +1,53 @@
 import { render } from "@testing-library/react";
-import React, { Component } from "react";
+import { React, Component, useState } from "react";
 import { NavLink, Link } from "react-router-dom";
-
 import "./navbar.css";
+import discord from "../../assets/discord.png";
+import twitter from "../../assets/twitter.png";
+import twitch from "../../assets/twitch.png";
 
-export class Navbar extends Component {
-  render() {
-    const extraNav = () => {
-      return (
-        <div className="extranav">
-          <h1>HAHAHAHAHAH</h1>
-        </div>
-      );
-    };
+export default function Navbar() {
+  const [show, setShow] = useState(false);
 
-    function setHoveringLink(bool) {
-      console.log("hahahahh");
-      if (bool === true) {
-        return { extraNav };
-      }
-    }
+  const setHoveringLink = (bool) => {
+    setShow(bool);
+  };
 
-    return (
-      <div className="navbar">
+  const Extranav = () => {
+    return <div className="extranav"></div>;
+  };
+
+  return (
+    <div className="navbar">
+      <div className="nav-content">
         <Link to="/">
           <div className="logo-cnt"></div>
         </Link>
 
         <div className="links">
-          <Link to="/about" onMouseEnter={() => setHoveringLink(true)}>
-            About
-          </Link>
-          <Link to="/games" onMouseEnter={() => setHoveringLink(true)}>
+          <Link
+            to="/games"
+            onMouseEnter={() => setHoveringLink(true)}
+            onMouseLeave={() => setHoveringLink(false)}
+          >
             Games
+            {show && <Extranav />}
           </Link>
-          <Link to="/news" onMouseEnter={() => setHoveringLink(true)}>
-            News
-          </Link>
-          <Link to="/merch" onMouseEnter={() => setHoveringLink(true)}>
-            Merch
-          </Link>
+
+          <Link to="/news">News</Link>
+
+          <Link to="/about">About</Link>
+
+          {localStorage.getItem("user") ? (
+            <Link to="/admin-dashboard">Dashboard</Link>
+          ) : (
+            ""
+          )}
         </div>
       </div>
-    );
-  }
+      <div className="nav-footer">
+        <h1>TAE MERCH</h1>
+      </div>
+    </div>
+  );
 }
-
-export default Navbar;

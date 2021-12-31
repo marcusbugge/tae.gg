@@ -1,16 +1,17 @@
 import "./App.css";
-import { Navbar } from "./components/navbar/Navbar.js";
+import Navbar from "./components/navbar/Navbar.js";
 import { Footer } from "./components/footer/Footer.js";
 import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import Home from "./components/homepage/Home";
 import HomeContent from "./components/homepage/HomeContent";
 import NotFound from "./components/pages/404pagenotfound/NotFound.js";
 import League from "./components/pages/lol/League.js";
-import { Valorant } from "./components/pages/valorant/Valorant.js";
+import Valorant from "./components/pages/valorant/Valorant.js";
 import ScrollToTop from "./ScrollToTop";
 import Login from "./components/login/Login";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Dashboard from "./components/pages/adminpanel/Dashboard";
 
 function App() {
   const [isOnline, setIsOnline] = useState(false);
@@ -42,6 +43,7 @@ function App() {
               <Route path="/games/league-of-legends" element={<League />} />
               <Route path="/games/valorant" element={<Valorant />} is />
               <Route path="/login" element={<Login />} />
+              <Route path="/admin-dashboard" element={<Dashboard />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
             <Footer />
