@@ -6,9 +6,21 @@ import twitter from "../../assets/twitter.png";
 import twitch from "../../assets/twitch.png";
 import { Link } from "react-router-dom";
 import isOnline from "../../App";
+import axios from "axios";
 
 export class Footer extends Component {
   render() {
+    async function logout() {
+      let url = "/api/user/logout";
+      axios
+        .post(url)
+        .then((res) => {
+          console.log(res);
+          localStorage.clear();
+          window.location.reload(false);
+        })
+        .catch((err) => console.log(err));
+    }
     return (
       <div className="footer-cnt">
         <div className="footer-content">
@@ -20,8 +32,11 @@ export class Footer extends Component {
               <Link to="/games/valorant">News</Link>
               <Link to="/aboutus">About us</Link>
               <Link to="/games/csgo">Staff</Link>
-              {isOnline ? (
-                <Link to="/">Logout</Link>
+              {localStorage.getItem("isAuthenticated") ? (
+                <Link to="/" onClick={logout}>
+                  {" "}
+                  Logout
+                </Link>
               ) : (
                 <Link to="/login">Login</Link>
               )}

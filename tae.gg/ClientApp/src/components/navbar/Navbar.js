@@ -45,7 +45,7 @@ export default function Navbar() {
 
           <Link to="/about">About</Link>
 
-          {localStorage.getItem("user") ? (
+          {localStorage.getItem("isAuthenticated") ? (
             <Link to="/admin-dashboard">Dashboard</Link>
           ) : (
             ""

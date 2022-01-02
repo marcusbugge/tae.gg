@@ -12,25 +12,27 @@ import Login from "./components/login/Login";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Dashboard from "./components/pages/adminpanel/Dashboard";
+import ProtectedRoute from "./components/navbar/ProtectedRoute";
 
 function App() {
-  const [isOnline, setIsOnline] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  useEffect(() => {
-    const result = axios.get("https://localhost:5001/api/user/userstatus");
-    if (result) {
-      setIsOnline(true);
-      localStorage.setItem("user", true);
-      console.log("Logged in");
+  //Function to validate if user is logged in
+  async function validateIfIserIsLoggedIn() {
+    const result = await axios.get("/api/user/userstatus");
+    console.log("User is logged in: ", result.data);
+    if (result.data) {
+      setIsLoggedIn(true);
     } else {
-      setIsOnline(false);
-      localStorage.setItem("user", false);
-      console.log("Logged out");
+      setIsLoggedIn(false);
     }
+  }
+  useEffect(() => {
+    validateIfIserIsLoggedIn();
   }, []);
 
   return (
-    <BrowserRouter isOnline={isOnline} onUpdate={() => window.scrollTo(0, 0)}>
+    <BrowserRouter onUpdate={() => window.scrollTo(0, 0)}>
       <ScrollToTop>
         <div className="application">
           <div className="nav">
@@ -43,7 +45,12 @@ function App() {
               <Route path="/games/league-of-legends" element={<League />} />
               <Route path="/games/valorant" element={<Valorant />} is />
               <Route path="/login" element={<Login />} />
-              <Route path="/admin-dashboard" element={<Dashboard />} />
+              {isLoggedIn ? (
+                <Route path="/admin-dashboard" element={<Dashboard />} />
+              ) : (
+                ""
+              )}
+
               <Route path="*" element={<NotFound />} />
             </Routes>
             <Footer />

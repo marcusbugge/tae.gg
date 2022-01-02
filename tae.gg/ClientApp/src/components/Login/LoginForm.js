@@ -3,30 +3,20 @@ import Login from "./Login";
 import axios from "axios";
 import { createBrowserHistory } from "history";
 import isOnline from "../../App";
+import { BrowserRouter, Link } from "react-router-dom";
 
 export const history = createBrowserHistory();
 
 export default function LoginForm() {
+  const [, updateState] = React.useState();
+  const forceUpdate = React.useCallback(() => updateState({}), []);
+
   const [user, setUser] = useState();
   let username;
   let password;
 
   const headers = { "header-name": "value" };
   const config = { headers };
-
-  const handleLogout = () => {
-    setUser({});
-    username = "";
-    password = "";
-
-    let url = "/api/user/logout";
-    axios
-      .post(url)
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => console.log(err));
-  };
 
   async function handleLogin(e) {
     e.preventDefault();
@@ -39,12 +29,14 @@ export default function LoginForm() {
     };
 
     axios
-      .post("https://localhost:5001/api/user/login", user, config)
+      .post("/api/user/login", user, config)
       .then((response) => {
         console.log(response.status);
         console.log(response.data);
         setUser(response.data);
-        localStorage.setItem("user", response.data);
+        localStorage.setItem("isAuthenticated", response.data);
+
+        window.location.reload(true);
       })
       .catch((e) => console.log("something went wrong :(", e));
   }
@@ -65,10 +57,6 @@ export default function LoginForm() {
         </div>
 
         <div className="buttons">
-          <button onClick={handleLogout}>
-            <p>Logout</p>
-          </button>
-
           <button type="submit">
             <p>Login</p>
           </button>
