@@ -17,7 +17,8 @@ export default function Navbar() {
     return (
       <div className="extranav">
         <div className="extranav-games">
-          <li></li>
+          <Link to="/games/valorant">Valorant</Link>
+          <Link to="/games/league-of-legends">League of Legends</Link>
         </div>
       </div>
     );

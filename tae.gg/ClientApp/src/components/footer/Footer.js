@@ -34,7 +34,7 @@ export class Footer extends Component {
             <div className="games">
               <Link to="/games/valorant">Valorant</Link>
               <Link to="/games/league-of-legends">League of Legends</Link>
-              <Link to="/games/csgo">Animal Crossing</Link>
+              <Link to="/games/teamfight-tactics">Teamfight Tactics</Link>
             </div>
           </div>
         </div>
@@ -42,10 +42,10 @@ export class Footer extends Component {
         <div className="social-cnt">
           <div className="icons">
             <a href="https://twitter.com/TAEesport">
-              <img src={twitch} alt="twitch-logo" className="twitch" />
+              <img src={twitter} alt="twitter-logo" className="twitter" />
             </a>
             <a href="https://www.twitch.tv/taeesports">
-              <img src={twitter} alt="twitter-logo" className="twitter" />
+              <img src={twitch} alt="twitch-logo" className="twitch" />
             </a>
             <a href="https://discord.com/invite/whUGyUygXm">
               <img src={discord} alt="discord-logo" className="discord" />

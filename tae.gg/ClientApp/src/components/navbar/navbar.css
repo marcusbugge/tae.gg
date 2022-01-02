@@ -71,6 +71,37 @@ a h1 {
   background-color: var(--tae_background_primary);
 }
 
+.extranav {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  animation: rollout 0.2s ease-out;
+  animation-fill-mode: forwards;
+}
+
+.extranav-games a:hover {
+  margin: 35px 0 0 15px;
+}
+
+.extranav-games {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.extranav-games a {
+  animation: rollin 0.2s ease-out forwards;
+  animation-delay: 0.1s;
+  opacity: 0;
+  color: rgb(131, 131, 131);
+  font-size: 15px;
+  padding: 0;
+  margin: 35px 0 0 10px;
+}
+
+/* ANIMATIONS */
+
 @keyframes rollout {
   0% {
     height: 0;
@@ -80,10 +111,12 @@ a h1 {
   }
 }
 
-.extranav {
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  animation: rollout 0.4s ease-out;
-  animation-fill-mode: forwards;
+@keyframes rollin {
+  0% {
+    margin-left: -10px;
+  }
+  100% {
+    opacity: 1;
+    margin-left: 5px;
+  }
 }
