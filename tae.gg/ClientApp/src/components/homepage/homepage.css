@@ -8,6 +8,14 @@
   align-items: center;
 }
 
+.taestroke {
+  position: absolute;
+  top: 0;
+  margin-top: -230px;
+  margin-left: -20px;
+  max-width: 86%;
+}
+
 .welcome-text {
   display: flex;
   justify-content: center;
@@ -24,8 +32,14 @@
 /* HOMECONTENT */
 
 .homecontent-content {
-  height: 2000px;
-  margin: 150px 0 150px 10%;
+  height: 100vh;
+  margin: 0 0 0 10%;
+}
+
+.homecontent-cnt {
+  padding: 150px 0;
+  background-image: radial-gradient(#d3d3d3 2px, transparent 1px);
+  background-size: 100px 100px;
 }
 
 .homecontent-content h1 {
@@ -55,4 +69,135 @@
   width: 100%;
   height: 2px;
   background-color: var(--tae_foreground_primary);
+
+}
+
+.games-holder {
+  margin-top: 50px;
+  display: flex;
+}
+
+.cnt {
+  width: 350px;
+  height: 500px;
+  position: relative;
+  margin-right: 50px;
+}
+
+.game-holder {
+  margin-right: 40px;
+  width: 350px;
+  height: 500px;
+  position: absolute;
+}
+
+.under-game-holder {
+  position: absolute;
+  width: 350px;
+  height: 500px;
+  background-color: var(--tae_foreground_primary);
+  margin-top: 10px;
+  margin-left: 10px;
+  z-index: -10;
+}
+
+.game,
+.game2 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: var(--tae_background_primary);
+}
+
+.game-holder:hover h1 {
+  margin-bottom: 100px;
+}
+
+.fade {
+  transition: 1s;
+  border-radius: 30px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 10;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(20, 20, 20, 1) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.game {
+  background-image: url(../../assets/raze.png);
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.game2 {
+  background-image: url(../../assets/riven.png);
+  border-radius: 30px;
+}
+
+.game-name {
+  display: flex;
+  justify-content: center;
+}
+
+.game-holder h1 {
+  transition: 0.2s;
+  font-size: 40px;
+  color: white;
+  position: absolute;
+  z-index: 11;
+  bottom: 0;
+  margin-bottom: 70px;
+}
+
+.game-name button {
+  position: absolute;
+  z-index: 11;
+  margin-top: 420px;
+}
+
+.our-teams-hover {
+  margin-top: 410px;
+  z-index: 15;
+  display: flex;
+}
+.our-teams-hover div {
+  cursor: pointer;
+  animation: rollup 0.2s forwards;
+  background-color: var(--tae_foreground_primary);
+  width: 80px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.our-teams-hover p {
+  font-family: var(--antonfont);
+  z-index: 11;
+  color: black;
+  font-size: 20px;
+  position: relative;
+}
+
+.our-teams-hover div:hover {
+  background-color: var(--tae_foreground_secondary);
+  color: white;
+}
+
+@keyframes rollup {
+  0% {
+    opacity: 0;
+    margin-top: 20px;
+  }
+  100% {
+    opacity: 1;
+    margin-top: 0;
+  }
 }
