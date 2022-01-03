@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using taegg.Models;
 using tae.gg.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace taegg.DB
 {
@@ -16,6 +17,7 @@ namespace taegg.DB
             public byte[] Password { get; set; }
             public byte[] Salt { get; set; }
         }
+
 
 
 

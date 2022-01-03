@@ -10,7 +10,9 @@ namespace tae.gg.Controllers
     [Route("api/[controller]/[action]")]
     public class UserController : ControllerBase {
         private IUserRepository _db;
-        private const string _loggedIn = "LoggedIn";
+        public const string _loggedIn = "LoggedIn";
+
+    
 
         public UserController(IUserRepository db)
         {
@@ -38,6 +40,7 @@ namespace tae.gg.Controllers
             return BadRequest("Feil i inputvalidering på server");
         }
 
+        [HttpPost]
         public void Logout()
         {
             HttpContext.Session.SetString(_loggedIn, "");

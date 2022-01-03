@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using tae.gg.Controllers;
 using taegg.DAL;
 using taegg.Models;
 
@@ -39,11 +41,27 @@ namespace taegg.Controllers
             return await _db.Delete(id);
         }
 
-        public async Task<bool> Change(Player newPlayer)
+    
+        public async Task<ActionResult> Change(Player player)
         {
-            return await _db.Change(newPlayer);
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString(UserController._loggedIn)))
+            {
+                return Unauthorized();
+            }
+            if (ModelState.IsValid)
+            {
+                bool returOK = await _db.Change(player);
+                if (!returOK)
+                {
+                    
+                    return NotFound("Endringen av kunden kunne ikke utføres");
+                }
+                return Ok("Kunde endret");
+            }
+            
+            return BadRequest("Feil i inputvalidering på server");
         }
 
-        
+
     }
 }

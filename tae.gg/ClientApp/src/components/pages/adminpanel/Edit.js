@@ -9,23 +9,16 @@ export default function Edit(props) {
     Role: "Testtt",
   });
 
-  const headers = { "header-name": "value" };
-  const config = { headers };
-
-  async function postToDB(e) {
+  function postToDB(e) {
     e.preventDefault();
+    let url = "/api/player/change/" + user.Id;
 
     axios
-
-      .post("/api/player/change", user, config)
-      .then((response) => {
-        console.log(user);
-        console.log(response.status);
-        console.log(response.data);
-        setUser(response.data);
-        localStorage.setItem("user", response.data);
+      .put(url, user)
+      .then((res) => {
+        console.log(res);
       })
-      .catch((e) => console.log("something went wrong :(", e));
+      .catch((err) => console.log(err));
   }
 
   const handleInfoChange = (e) => {
