@@ -94,6 +94,7 @@ namespace taegg.DB
             db.players.Add(player9);
             db.players.Add(player10);
 
+
             var user = new Users();
             user.Username = "Admin";
             string passord = "Test11";

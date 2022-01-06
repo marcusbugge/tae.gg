@@ -41,27 +41,20 @@ namespace taegg.Controllers
             return await _db.Delete(id);
         }
 
-    
-        public async Task<ActionResult> Change(Player player)
+        [HttpPut("{id}")]
+        public async Task<ActionResult> Change(int id, [FromBody] Player player)
         {
-            if (string.IsNullOrEmpty(HttpContext.Session.GetString(UserController._loggedIn)))
+            bool returOK = await _db.Change(id, player);
+
+
+            if (!returOK)
             {
-                return Unauthorized();
+                return NotFound("Endringen av kunden kunne ikke utføres");
             }
-            if (ModelState.IsValid)
-            {
-                bool returOK = await _db.Change(player);
-                if (!returOK)
-                {
-                    
-                    return NotFound("Endringen av kunden kunne ikke utføres");
-                }
-                return Ok("Kunde endret");
-            }
-            
-            return BadRequest("Feil i inputvalidering på server");
+            return Ok("Kunde endret");
         }
-
-
+            
+        
+        
     }
 }

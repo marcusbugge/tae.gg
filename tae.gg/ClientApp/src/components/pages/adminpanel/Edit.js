@@ -2,15 +2,18 @@ import axios from "axios";
 import React, { useState } from "react";
 
 export default function Edit(props) {
-  const [user, setUser] = useState({
-    Id: "2",
-    Gamertag: "Test",
-    Game: "lol",
-    Role: "Testtt",
-  });
-
-  function postToDB(e) {
+  function postToDB(e, gamertag, role) {
     e.preventDefault();
+
+    const user = {
+      Id: props.index + 1,
+      Gamertag: gamertag,
+      Game: props.game,
+      Role: role,
+    };
+
+    console.log(user);
+
     let url = "/api/player/change/" + user.Id;
 
     axios
@@ -20,13 +23,14 @@ export default function Edit(props) {
       })
       .catch((err) => console.log(err));
   }
-
   const handleInfoChange = (e) => {
     e.preventDefault();
 
-    console.log(user);
-    postToDB(e);
+    const gamertag = e.target.gamertag.value;
+    const role = e.target.role.value;
+    postToDB(e, gamertag, role);
   };
+
   return (
     <div>
       <div className="playerinfo-extend">
@@ -43,7 +47,6 @@ export default function Edit(props) {
             placeholder="Gamertag"
             className="inputextend"
           ></input>
-
           <button type="submit" className="save-btn">
             SAVE
           </button>
