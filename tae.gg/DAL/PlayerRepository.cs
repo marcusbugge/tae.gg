@@ -81,24 +81,24 @@ namespace taegg.DAL
             return null;
         }
 
-        // Change a player with POST
-        public async Task<bool> Change(Player newPlayer)
+
+        public async Task<bool> Change(int id, [FromBody] Player newPlayer)
         {
-            
+
             try
             {
-                Player playerToChange = await _db.players.FindAsync(newPlayer.Id);
+                var playerToChange = await _db.players.FindAsync(id);
 
                 playerToChange.Gamertag = newPlayer.Gamertag;
                 playerToChange.Game = newPlayer.Game;
                 playerToChange.Role = newPlayer.Role;
                 await _db.SaveChangesAsync();
+                return true;
             }
             catch
             {
                 return false;
             }
-            return true;
         }
 
         public async Task<bool> Delete(int id)
