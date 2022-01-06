@@ -1,0 +1,45 @@
+.aboutpage {
+  background: black;
+  color: white;
+  padding: 300px 0;
+}
+
+.header {
+  display: flex;
+}
+
+.header img {
+  width: 300px;
+}
+
+.logo {
+  width: 2em;
+}
+
+.tae {
+  font-size: 6rem;
+}
+
+.text-cnt {
+  margin-left: 150px;
+}
+
+.founded-cnt {
+  background: var(--tae_foreground_primary);
+  font-size: 10px;
+  width: 200px;
+  height: 30px;
+  margin-top: -10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.founded-cnt h1 {
+  color: black;
+}
+
+.text-cnt p {
+  margin-top: 40px;
+}
