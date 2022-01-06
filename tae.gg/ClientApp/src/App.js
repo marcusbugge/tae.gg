@@ -9,6 +9,7 @@ import League from "./components/pages/lol/League.js";
 import Valorant from "./components/pages/valorant/Valorant.js";
 import ScrollToTop from "./ScrollToTop";
 import Login from "./components/login/Login";
+import About from "./components/pages/about/About.js";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Dashboard from "./components/pages/adminpanel/Dashboard";
@@ -43,6 +44,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/games/league-of-legends" element={<League />} />
+              <Route path="/about" element={<About />} />
               <Route path="/games/valorant" element={<Valorant />} is />
               <Route path="/login" element={<Login />} />
               {isLoggedIn ? (

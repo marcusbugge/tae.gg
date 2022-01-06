@@ -5,7 +5,9 @@ import Edit from "./Edit";
 
 export default function Dashboard() {
   const [loaded, setLoaded] = useState(false);
-  const [players, setPlayers] = useState([]);
+  const [lolplayers, setLolplayers] = useState([]);
+  const [valplayers, setValplayers] = useState([]);
+
   useEffect(() => {
     getAllPlayers();
 
@@ -13,12 +15,11 @@ export default function Dashboard() {
       const response = await fetch("/api/player/getplayersbygame?game=lol");
       const data = await response.json();
       console.log(data);
-      setPlayers(data);
+      setLolplayers(data);
       setLoaded(true);
     }
   }, []);
 
-  const [valplayers, setValplayers] = useState([]);
   useEffect(() => {
     getAllValPlayers();
 
@@ -43,6 +44,8 @@ export default function Dashboard() {
     setShow(-1);
   };
 
+  const playersections = () => {};
+
   return (
     <div className="dashboard-cnt">
       <div className="dashboard-header">
@@ -54,7 +57,7 @@ export default function Dashboard() {
             <h1>LEAGUE OF LEGENDS</h1>
             {loaded ? (
               <div>
-                {players.map((player, index) => (
+                {lolplayers.map((player, index) => (
                   <div key={index}>
                     <div className="playerinfo">
                       <div className="player-data-cnt">
