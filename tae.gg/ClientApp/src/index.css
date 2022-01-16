@@ -44,7 +44,6 @@ a {
 
 a:hover {
   color: var(--tae_foreground_primary);
-  font-weight: 900;
 }
 
 .stripe {

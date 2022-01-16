@@ -4,11 +4,25 @@ import PlayerIcon from "../../../assets/playericon.png";
 export default function Players(props) {
   const [isShown, setIsShown] = useState(false);
 
+  function hover(index) {
+    console.log("hey");
+    setIsShown(index);
+  }
+  const HoverCard = () => {
+    return <div className="hovercard">sdfsdfsdfsdffsd</div>;
+  };
+
   return (
     <div className="cards-cnt">
       <div className="cards">
         {props.playerss.map((player, index) => (
-          <div key={index}>
+          <div
+            className="cardcard"
+            onMouseEnter={() => hover(index)}
+            onMouseLeave={() => hover(false)}
+            key={index}
+          >
+            {isShown === index ? <HoverCard /> : ""}
             <div className="card">
               <img src={PlayerIcon} alt="icon" />
               <div className="playertext">

@@ -4,6 +4,7 @@ import axios from "axios";
 import { createBrowserHistory } from "history";
 import isOnline from "../../App";
 import { BrowserRouter, Link } from "react-router-dom";
+import Loginconfirmation from "./Loginconfirmation";
 
 export const history = createBrowserHistory();
 
@@ -14,6 +15,8 @@ export default function LoginForm() {
   const [user, setUser] = useState();
   let username;
   let password;
+
+  const [render, setRender] = useState(true);
 
   const headers = { "header-name": "value" };
   const config = { headers };
@@ -36,6 +39,8 @@ export default function LoginForm() {
         setUser(response.data);
         localStorage.setItem("isAuthenticated", response.data);
 
+        setRender(true);
+
         window.location.reload(true);
       })
       .catch((e) => console.log("something went wrong :(", e));
@@ -45,6 +50,7 @@ export default function LoginForm() {
     <div className="loginform">
       <h1>LOGIN</h1>
       <form onSubmit={handleLogin}>
+        {localStorage.getItem("isAuthenticated") ? <Loginconfirmation /> : ""}
         <div className="label-cnt">
           <label>
             <p>Username</p>
