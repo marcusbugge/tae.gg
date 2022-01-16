@@ -1,6 +1,7 @@
 import React from "react";
 import "./about.css";
 import logo from "../../../assets/logo.png";
+import Loginconfirmation from "../../login/Loginconfirmation";
 export default function About() {
   return (
     <div className="aboutpage">

@@ -23,7 +23,27 @@ export default function League() {
       <Header />
 
       <div className="data">
+        <div className="main-team-cnt">
+          <div className="main-team-header">
+            <h1>MAIN</h1>
+          </div>
+          <div className="main-team-line"></div>
+        </div>
         <Players playerss={players} />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <div className="main-team-cnt">
+          <div className="main-team-header">
+            <h1>TALENT</h1>
+          </div>
+          <div className="main-team-line"></div>
+        </div>
+        <Players playerss={players} />
+        <h1 id="taeincoming">#TAEINCOMING</h1>
       </div>
     </div>
   );
